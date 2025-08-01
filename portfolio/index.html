@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS DESIGN | Visual que Vende</title>
+    <!-- Inclui a biblioteca de ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Inclui o Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+        }
+        .text-golden {
+            color: #FFD700; /* Cor dourada para detalhes */
+        }
+        .bg-card {
+            background-color: #1a1a1a;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #FFD700;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            display: none;
+            background-color: #FFD700;
+            color: #0d0d0d;
+            padding: 10px 15px;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar de navegação fixa no topo -->
+    <header class="bg-[#1a1a1a] shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo e Título -->
+            <div class="flex items-center space-x-2">
+                <!-- Ícone de 'D' e 'S' simples para o logo -->
+                <div class="text-golden text-2xl font-bold">DS</div>
+                <a href="#" class="text-2xl font-bold">DS DESIGN</a>
+            </div>
+            
+            <!-- Menu de navegação -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                <li><a href="#dicas" class="nav-link">Dicas</a></li>
+                <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                <li><a href="#resultados" class="nav-link">Resultados</a></li>
+                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+            </ul>
+            
+            <!-- Botão do menu mobile -->
+            <button id="menu-button" class="md:hidden text-golden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Menu dropdown para mobile -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <ul class="flex flex-col items-center py-4 space-y-2">
+                <li><a href="#portfolio" class="nav-link block p-2">Portfólio</a></li>
+                <li><a href="#dicas" class="nav-link block p-2">Dicas</a></li>
+                <li><a href="#servicos" class="nav-link block p-2">Serviços</a></li>
+                <li><a href="#resultados" class="nav-link block p-2">Resultados</a></li>
+                <li><a href="#depoimentos" class="nav-link block p-2">Depoimentos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <main class="container mx-auto px-6 py-20 text-center">
+        <div class="flex flex-col items-center">
+            <!-- Logo do DS DESIGN (usando um SVG placeholder) -->
+            <div class="w-32 h-32 mb-6">
+                <svg viewBox="0 0 100 100" class="w-full h-full text-golden">
+                    <path fill="currentColor" d="M 50,5 A 45,45 0 1,1 50,95 A 45,45 0 1,1 50,5 Z M 40,30 L 60,30 L 60,70 L 40,70 Z M 40,30 L 40,70 A 20,20 0 0,0 60,70 L 60,30 Z" />
+                </svg>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">DS DESIGN</h1>
+            <p class="text-xl md:text-2xl text-golden font-medium mb-8">Visual que Vende</p>
+            <p class="text-lg md:text-xl max-w-2xl text-gray-400 mb-10">
+                Identidade visual para quem quer impacto. <br class="hidden sm:block"> Barbearias | Lojas | Influencers.
+            </p>
+            <a href="https://wa.me/seu-numero" target="_blank" class="bg-golden text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition-colors duration-300">
+                Orçamentos via WhatsApp
+            </a>
+        </div>
+    </main>
+
+    <!-- Seção de Portfólio -->
+    <section id="portfolio" class="container mx-auto px-6 py-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Nossos Trabalhos Recentes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card do Portfólio 1 -->
+            <div class="bg-card rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/600x400/262626/f0f0f0?text=Projeto+01" alt="Projeto de Portfólio" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-golden mb-2">Identidade de Marca</h3>
+                    <p class="text-gray-400">Criação completa de logo e paleta de cores para uma barbearia.</p>
+                </div>
+            </div>
+            <!-- Card do Portfólio 2 -->
+            <div class="bg-card rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/600x400/262626/f0f0f0?text=Projeto+02" alt="Projeto de Portfólio" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-golden mb-2">Design de E-commerce</h3>
+                    <p class="text-gray-400">Layout e identidade visual para uma loja de roupas online.</p>
+                </div>
+            </div>
+            <!-- Card do Portfólio 3 -->
+            <div class="bg-card rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://placehold.co/600x400/262626/f0f0f0?text=Projeto+03" alt="Projeto de Portfólio" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-golden mb-2">Feed de Instagram</h3>
+                    <p class="text-gray-400">Design de posts e templates para influenciadores digitais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Dicas -->
+    <section id="dicas" class="container mx-auto px-6 py-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Dicas de Branding e Design</h2>
+        <div class="space-y-6">
+            <!-- Dica 1 -->
+            <div class="bg-card rounded-lg p-6 shadow-lg">
+                <h3 class="text-xl font-bold text-golden mb-2">A importância da consistência</h3>
+                <p class="text-gray-400">Manter a mesma paleta de cores, tipografia e estilo visual em todos os canais de comunicação é crucial para a sua marca ser reconhecida e lembrada.</p>
+            </div>
+            <!-- Dica 2 -->
+            <div class="bg-card rounded-lg p-6 shadow-lg">
+                <h3 class="text-xl font-bold text-golden mb-2">Use imagens de alta qualidade</h3>
+                <p class="text-gray-400">Fotos e vídeos profissionais transmitem credibilidade e profissionalismo, valorizando seus produtos e serviços.</p>
+            </div>
+            <!-- Dica 3 -->
+            <div class="bg-card rounded-lg p-6 shadow-lg">
+                <h3 class="text-xl font-bold text-golden mb-2">Conheça seu público-alvo</h3>
+                <p class="text-gray-400">Um bom design não é apenas bonito, mas também estratégico. Ele deve se comunicar diretamente com o seu público, criando uma conexão genuína.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="container mx-auto px-6 py-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">O que nós fazemos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Serviço 1 -->
+            <div class="bg-card rounded-lg p-8 shadow-lg flex items-start space-x-4">
+                <div class="flex-shrink-0 text-golden text-3xl">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Identidade Visual</h3>
+                    <p class="text-gray-400">Criação de logo, paleta de cores, tipografia e elementos gráficos para sua marca.</p>
+                </div>
+            </div>
+            <!-- Serviço 2 -->
+            <div class="bg-card rounded-lg p-8 shadow-lg flex items-start space-x-4">
+                <div class="flex-shrink-0 text-golden text-3xl">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Gestão de Mídias Sociais</h3>
+                    <p class="text-gray-400">Planejamento e criação de conteúdo visual para Instagram, Facebook e outras plataformas.</p>
+                </div>
+            </div>
+            <!-- Serviço 3 -->
+            <div class="bg-card rounded-lg p-8 shadow-lg flex items-start space-x-4">
+                <div class="flex-shrink-0 text-golden text-3xl">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Web Design</h3>
+                    <p class="text-gray-400">Desenvolvimento de sites modernos e responsivos que refletem a identidade da sua marca.</p>
+                </div>
+            </div>
+            <!-- Serviço 4 -->
+            <div class="bg-card rounded-lg p-8 shadow-lg flex items-start space-x-4">
+                <div class="flex-shrink-0 text-golden text-3xl">
+                    <i class="fas fa-ad"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Design para Publicidade</h3>
+                    <p class="text-gray-400">Criação de banners, flyers e anúncios digitais para campanhas de marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Resultados -->
+    <section id="resultados" class="container mx-auto px-6 py-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Resultados que Geramos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-card rounded-lg p-8 shadow-lg">
+                <h3 class="text-5xl font-extrabold text-golden mb-2">+300%</h3>
+                <p class="text-gray-400">Aumento de engajamento em redes sociais</p>
+            </div>
+            <div class="bg-card rounded-lg p-8 shadow-lg">
+                <h3 class="text-5xl font-extrabold text-golden mb-2">50+</h3>
+                <p class="text-gray-400">Projetos de identidade visual entregues</p>
+            </div>
+            <div class="bg-card rounded-lg p-8 shadow-lg">
+                <h3 class="text-5xl font-extrabold text-golden mb-2">+100%</h3>
+                <p class="text-gray-400">Crescimento de leads para nossos clientes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section id="depoimentos" class="container mx-auto px-6 py-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">O que Nossos Clientes Dizem</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Depoimento 1 -->
+            <div class="bg-card rounded-lg p-8 shadow-lg">
+                <p class="text-lg italic text-gray-300 mb-4">"O trabalho da DS DESIGN transformou a imagem da minha barbearia. Recebemos muitos elogios e o número de clientes aumentou significativamente."</p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/50x50/FFD700/0d0d0d?text=JS" alt="Foto do Cliente" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold text-golden">João Silva</h4>
+                        <p class="text-gray-400">Proprietário da "Barbearia Vintage"</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Depoimento 2 -->
+            <div class="bg-card rounded-lg p-8 shadow-lg">
+                <p class="text-lg italic text-gray-300 mb-4">"Profissionalismo e criatividade incríveis. O feed do meu Instagram nunca esteve tão bonito e organizado. Recomendo de olhos fechados!"</p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/50x50/FFD700/0d0d0d?text=MC" alt="Foto da Cliente" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold text-golden">Maria Costa</h4>
+                        <p class="text-gray-400">Influenciadora Digital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] py-8 text-center text-gray-400">
+        <p>&copy; 2025 DS DESIGN. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão de Voltar ao Topo -->
+    <div id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Lógica para o menu mobile
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lógica para o botão de voltar ao topo
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Lógica para fechar o menu mobile ao clicar em um link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
